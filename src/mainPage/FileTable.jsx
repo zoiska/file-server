@@ -1,6 +1,6 @@
 import React from 'react';
 import './FileTable.css';
-import { useFiles } from './contexts/FileContext';
+import { useFiles } from '../contexts/FileContext';
 
 function FileTable() {
   const { files } = useFiles();

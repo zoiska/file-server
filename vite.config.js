@@ -8,7 +8,10 @@ export default defineConfig({
       '/uploads': {
         target: 'http://localhost:5000',
         changeOrigin: true,
-      }
+      },
+      '/login': 'http://localhost:5000',
+      '/logout': 'http://localhost:5000',
+      '/status': 'http://localhost:5000'
     }
   }
 });

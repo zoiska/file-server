@@ -1,6 +1,6 @@
 import React from 'react';
 import './DropArea.css'
-import { useFiles } from './contexts/FileContext';
+import { useFiles } from '../contexts/FileContext';
 
 function DropArea() {
   const { refreshFiles } = useFiles();

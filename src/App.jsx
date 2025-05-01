@@ -1,7 +1,7 @@
 import React from "react"
-import Header from "./Header"
-import DropArea from "./DropArea"
-import FileTable from "./FileTable"
+import Header from "./mainPage/Header"
+import DropArea from "./mainPage/DropArea"
+import FileTable from "./mainPage/FileTable"
 import { FileProvider } from "./contexts/FileContext"
 
 function App() {

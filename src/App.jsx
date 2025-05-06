@@ -1,16 +1,16 @@
 import React from "react"
-import Header from "./mainPage/Header"
-import DropArea from "./mainPage/DropArea"
-import FileTable from "./mainPage/FileTable"
-import { FileProvider } from "./contexts/FileContext"
+import Home from "./home/Home.jsx"
+import Login from "./login/Login.jsx"
+import { HashRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
-    <FileProvider>
-      <Header/>
-      <DropArea/>
-      <FileTable/>
-    </FileProvider>
+    <HashRouter>
+      <Routes>
+          <Route path='/login' element={<Login/>} />
+          <Route path='/' element={<Home/>} />
+      </Routes>
+    </HashRouter>
   )
 }
 

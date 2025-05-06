@@ -1,3 +1,3 @@
 module.exports = [
-    { id: 1, username: 'admin', password: 'secret' }
+    { id: 1, username: 'admin', password: 'admin' }
   ];

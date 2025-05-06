@@ -30,7 +30,7 @@ app.use('/uploads', express.static(uploadFolder));
 
 // Routes
 app.use('/uploads', requireLogin, uploadRoutes);
-app.use('/auth', authRoutes)
+app.use('/login', authRoutes)
 
 
 // Middleware!

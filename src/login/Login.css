@@ -1,0 +1,19 @@
+.frag{
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 300px;
+}
+
+button, input{
+    border-radius: 16px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 7px;
+    font-size: medium;
+    width: 100%;
+}

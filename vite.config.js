@@ -9,7 +9,11 @@ export default defineConfig({
         target: 'http://localhost:5000',
         changeOrigin: true,
       },
-      '/login': 'http://localhost:5000',
+      '/login': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      },
       '/logout': 'http://localhost:5000',
       '/status': 'http://localhost:5000'
     }

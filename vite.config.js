@@ -8,14 +8,19 @@ export default defineConfig({
       '/uploads': {
         target: 'http://localhost:5000',
         changeOrigin: true,
+        secure: false
       },
       '/login': {
         target: 'http://localhost:5000',
         changeOrigin: true,
-        secure: false,
+        secure: false
       },
       '/logout': 'http://localhost:5000',
-      '/status': 'http://localhost:5000'
+      '/status': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
+      }
     }
   }
 });

@@ -1,16 +1,34 @@
 import React from "react"
 import Home from "./home/Home.jsx"
 import Login from "./login/Login.jsx"
-import { HashRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate} from "react-router-dom"
+import { useState, useEffect } from "react"
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(null) // null = loading?
+
+  useEffect(() => {
+    fetch('/status', {
+      credentials: "include",
+    })
+    .then((res) => res.json())
+    .then((data) => {setIsAuthenticated(data.authenticated);
+    })
+    .catch((err) => {
+      console.error('Failed to fetch auth status:', err);
+      setIsAuthenticated(false);
+    });
+  }, []);
+
+  if(isAuthenticated === null) {
+    return <div>Loading...</div>
+  }
+
   return (
-    <HashRouter>
-      <Routes>
-          <Route path='/login' element={<Login/>} />
-          <Route path='/' element={<Home/>} />
-      </Routes>
-    </HashRouter>
+    <Routes>
+        <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated}/>} />
+        <Route path='/' element={isAuthenticated? <Home/> : <Navigate to="/login" />} />
+    </Routes>
   )
 }
 

@@ -24,7 +24,7 @@ function DropArea() {
           formData.append('files', file);
 
           try {
-            await fetch('/uploads', {
+            await fetch('/api/uploads', {
               method: 'POST',
               body: formData,
             });

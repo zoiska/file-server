@@ -3,8 +3,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const users = require('./users')
 
-passport.use(
-  new LocalStrategy((username, password, done) => {
+passport.use(new LocalStrategy((username, password, done) => {
     const user = users.find((u) => u.username === username);
     if (!user) {
       return done(null, false, { message: 'Incorrect username' });

@@ -10,13 +10,7 @@ export default defineConfig({
         changeOrigin: true,
         secure: false
       },
-      '/login': {
-        target: 'http://localhost:5000',
-        changeOrigin: true,
-        secure: false
-      },
-      '/logout': 'http://localhost:5000',
-      '/status': {
+      '/api': {
         target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false

@@ -8,7 +8,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(null) // null = loading?
 
   useEffect(() => {
-    fetch('/status', {
+    fetch('/api/status', {
       credentials: "include",
     })
     .then((res) => res.json())

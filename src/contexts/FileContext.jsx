@@ -10,7 +10,7 @@ export function FileProvider({ children }) {
   const [files, setFiles] = useState([]);
 
   function refreshFiles() {
-    fetch('/uploads/')
+    fetch('/api/uploads/')
       .then((res) => res.json())
       .then((data) => setFiles(data))
       .catch((err) => console.error('Error loading /uploads:', err));

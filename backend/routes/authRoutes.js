@@ -6,13 +6,13 @@ router.post('/', passport.authenticate('local'), (req, res) => {
   res.json({ message: 'Logged in', user: req.user});
 });
 
-router.get('/logout', (req, res) => {
+router.get('/api/logout', (req, res) => {
   req.logout(() => {
   res.send('Logged out');
   });
 });
 
-router.get('/status', (req, res) => {
+router.get('/api/status', (req, res) => {
   if (req.isAuthenticated()) {
     res.json({ authenticated: true, user: req.user });
   } else {

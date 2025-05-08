@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from "../header/Header"
 import './Login.css'
 
 function Login({ setIsAuthenticated}) {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    async function handleKeyDown(event) {
+        if(event.key === 'Enter') {
+            handleClicked()
+        }
+    }
 
     async function handleClicked() {
         try {
@@ -31,21 +38,25 @@ function Login({ setIsAuthenticated}) {
   
 
     return (
-        <div className="frag">
-        <input
-            className="username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-            className="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={handleClicked}>Login</button>
-        </div>
+        <>
+            <Header showButton={false}/>
+            <div className="frag">
+                <input
+                    className="username"
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    className="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
+                <button onClick={handleClicked}>Login</button>
+            </div>
+        </>
     );
 }
 

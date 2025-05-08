@@ -1,0 +1,26 @@
+@import '../index.css';
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 8vh;
+    background-color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-text);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+}
+
+.logoutButton{
+    position: absolute;
+    right: 25px;
+    width: 100px;
+}

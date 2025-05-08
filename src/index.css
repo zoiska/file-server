@@ -1,0 +1,21 @@
+/*
+#09122C / rgb(9, 18, 44) - dark bluepurple
+#872341 / rgb(135, 35, 65) - maroon
+#BE3144 / rgb(190, 49, 68) - red
+#E17564 / rgb(225, 117, 100) - orang
+#FFA594 / whatever - light orang
+*/
+
+:root {
+    --color-bg: #09122C;
+    --color-primary: #872341;
+    --color-accent: #BE3144;
+    --color-text: #FFA594;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html{
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+}

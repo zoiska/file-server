@@ -1,5 +1,15 @@
+@import '../index.css';
+
 #downloadArrow{
     display: flex;
     justify-self: center;
     align-self: center;
+}
+
+table{
+    justify-self: center;
+    align-self: center;
+    border: 2px solid var(--color-accent);
+    background-color: var(--color-primary);
+    color: var(--color-text);
 }

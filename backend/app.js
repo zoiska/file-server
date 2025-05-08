@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(session({
   secret: 'secret', // must replace with .env
@@ -21,7 +21,8 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     sameSite: 'lax',
-    //secure: process.env.NODE_ENV === 'production'
+    maxAge: 1000 * 60 * 30, // 1h
+    secure: false
   }
 }));
 
@@ -43,7 +44,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // API routes (prefix with /api)
 app.use('/api/uploads', requireLogin, uploadRoutes);
-app.use('/api/login', authRoutes);
+app.use('/api', authRoutes);
 
 // Serve React frontend
 const clientBuildPath = path.join(__dirname, '..', 'client', 'build');

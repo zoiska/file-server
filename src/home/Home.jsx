@@ -7,7 +7,7 @@ import { FileProvider } from "../contexts/FileContext"
 function Home() {
   return (
     <FileProvider>
-      <Header showButton={true}/>
+      <Header showLogoutB={true} showLoginB={false} showRegisterB={false}/>
       <DropArea/>
       <FileTable/>
     </FileProvider>

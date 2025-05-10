@@ -1,6 +1,7 @@
 import React from "react"
 import Home from "./home/Home.jsx"
 import Login from "./login/Login.jsx"
+import Register from "./register/Register.jsx"
 import { Routes, Route, Navigate} from "react-router-dom"
 import { useState, useEffect } from "react"
 
@@ -26,7 +27,8 @@ function App() {
 
   return (
     <Routes>
-        <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated}/>} />
+        <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated}/>} />        
+        <Route path='/register' element={<Register/>} />
         <Route path='/' element={isAuthenticated? <Home/> : <Navigate to="/login" />} />
     </Routes>
   )

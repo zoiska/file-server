@@ -1,0 +1,17 @@
+[
+  {
+    "uuid": "1",
+    "username": "admin",
+    "password": "admin"
+  },
+  {
+    "uuid": "45f3cd42-e6e0-4c9b-aa1c-1f2908922878",
+    "username": "qwe",
+    "password": "qwe"
+  },
+  {
+    "uuid": "49d70d9d-d487-47b3-b404-2347906e0ab3",
+    "username": "qwe1",
+    "password": "qwe"
+  }
+]

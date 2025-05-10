@@ -19,7 +19,7 @@ h1{
     align-self: center;
 }
 
-.logoutButton{
+.headerButton{
     position: absolute;
     right: 25px;
     width: 100px;

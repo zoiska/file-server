@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from "../header/Header"
-import './Login.css'
+import './Register.css'
 
-function Login({ setIsAuthenticated }) {
+function Register() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +16,7 @@ function Login({ setIsAuthenticated }) {
 
     async function handleClicked() {
         try {
-            const res = await fetch('/api/login', {
+            const res = await fetch('/api/register', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -26,40 +26,40 @@ function Login({ setIsAuthenticated }) {
             });
   
             if (res.ok) {
-                setIsAuthenticated(true)
-                navigate('/');
+                navigate('/login');
             } else {
-                console.error('Login failed')
+                console.error('Registration failed')
             }
         } catch (error) {
-            console.error('Login error:', error);
+            console.error('Registration error:', error);
         }
     }
   
 
     return (
         <>
-            <Header showLogoutB={false} showLoginB={false} showRegisterB={true}/>
+            <Header showLogoutB={false} showLoginB={true} showRegisterB={false}/>
             <div className="frag">
                 <input
-                    placeholder="Enter username"
+                    placeholder='Choose a username'
                     className="username"
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
+
                 <input
-                    placeholder="Enter password"
+                    placeholder='Choose a password'
                     className="password"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
-                <button onClick={handleClicked}>Login</button>
+                <button onClick={handleClicked}>Register</button>
             </div>
         </>
     );
 }
 
-export default Login;
+export default Register;
